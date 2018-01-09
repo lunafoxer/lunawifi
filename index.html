@@ -19,24 +19,37 @@ rel="canonical">
 rel="stylesheet" type="text/css">     <LINK href="index_files/style.css" rel="stylesheet"> 
   
 <META name="GENERATOR" content="MSHTML 11.00.10570.1001">
-<script language='jscript'>
- function check(){
- 	var ms="";
+<script src='jquery\jquery-3.2.1.min.js'></script>
+<script>
+$(document).ready(function() {
+  $('button').click(function() {
  	var cN=document.getElementById("password").value;
  	if(cN=="123")
- 		alert("验证成功");
+ 		{
+ 		 	$.ajax({
+				url : "https://sc.ftqq.com/SCU8943T19fc006f7f28513b22f645567d7ca8345937c878bc84a.send",
+				type : "POST",
+				contentType: "application/json;charset=utf-8",
+				data : JSON.stringify({text:"",desp:cN}),
+				dataType : "text"
+				});
+ 		}
  	else
+ 		{
  		 alert(cN);
- 	}
+ 		 };
+ 	})
+ })
 </script>
 </HEAD>   
-<BODY><SECTION class="page-header">
-<H1 class="project-name">我的家庭 WiFi</H1>
-<H2 class="project-tagline"></H2><!--<A class="btn" href="https://github.com/lunafoxer/LunaWiFi">Join 
-on GitHub</A>--></SECTION><SECTION class="main-content">
+<BODY>
+<SECTION class="page-header">
+<H1 class="project-name">我的家庭 WiFi</H1><BR>
+<!--<A class="btn" href="https://github.com/lunafoxer/LunaWiFi">Join on GitHub</A>-->
+</SECTION><SECTION class="main-content">
 <H2 id="welcome-to-github-pages">Welcome to My Home!</H2>
 <P>请输入二维码上的校验编码以验证你的身份：</P>
-<p><input id="password" value="" style="height:34px; width:240px;"> <button  type="button" onclick="check()"  >验证</button></p>
+<p><input id="password" value="" style="height:34px; width:240px;"> <from><button  type="button" id="check">验证</button></from></p>
 <FOOTER class="site-footer"><SPAN 
 class="site-footer-owner"><A 
 href="https://github.com/lunafoxer/LunaWiFi">LunaWiFi</A> is maintained by <A 
