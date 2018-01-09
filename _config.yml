@@ -1,6 +1,6 @@
 
 # Site settings
-
+theme: jekyll-theme-cayman
 title: 窗外蟋蟀
 SEOTitle: 窗外蟋蟀的博客 | Keysaim Blog
 header-img: img/home-bg-hill.jpg
