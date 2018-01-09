@@ -18,14 +18,25 @@ rel="canonical">
 <META name="theme-color" content="#157878">     <LINK href="index_files/css.css" 
 rel="stylesheet" type="text/css">     <LINK href="index_files/style.css" rel="stylesheet"> 
   
-<META name="GENERATOR" content="MSHTML 11.00.10570.1001"></HEAD>   
+<META name="GENERATOR" content="MSHTML 11.00.10570.1001">
+<script language='jscript'>
+ function check(){
+ 	var ms="";
+ 	var cN=document.getElementById("password").value;
+ 	if(cN=="123")
+ 		alert("验证成功");
+ 	else
+ 		 alert(cN);
+ 	}
+</script>
+</HEAD>   
 <BODY><SECTION class="page-header">
 <H1 class="project-name">我的家庭 WiFi</H1>
 <H2 class="project-tagline"></H2><!--<A class="btn" href="https://github.com/lunafoxer/LunaWiFi">Join 
 on GitHub</A>--></SECTION><SECTION class="main-content">
 <H2 id="welcome-to-github-pages">Welcome to My Home!</H2>
-<P>Hallo World!</P>
-
+<P>请输入二维码上的校验编码以验证你的身份：</P>
+<p><input id="password" value="" style="height:34px; width:240px;"> <button  type="button" onclick="check()"  >验证</button></p>
 <FOOTER class="site-footer"><SPAN 
 class="site-footer-owner"><A 
 href="https://github.com/lunafoxer/LunaWiFi">LunaWiFi</A> is maintained by <A 
