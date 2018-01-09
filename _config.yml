@@ -1,1 +1,11 @@
+
+# Site settings
 theme: jekyll-theme-cayman
+title: ´°Íâó¬ó°
+SEOTitle: ´°Íâó¬ó°µÄ²©¿Í | Keysaim Blog
+header-img: img/home-bg-hill.jpg
+email: keysaim@gmail.com
+description: "ÃèÊö"
+keyword: "´°Íâó¬ó°, keysaim"
+url: "https://keysaim.github.io"
+baseurl: ""
