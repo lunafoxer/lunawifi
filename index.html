@@ -37,8 +37,8 @@
 		getpw.open("POST","http://96b7fc8a3e004929af6382c36c9b93e7-cn-hangzhou.alicloudapi.com/checkpw/"+pw,false);
 		getpw.setRequestHeader("X-Ca-sign-Test","cagconsoleapitest888")
 		getpw.setRequestHeader("Host","96b7fc8a3e004929af6382c36c9b93e7-cn-hangzhou.alicloudapi.com")
-		getpw.setRequestHeader("gateway_channel","http")
-		getpw.setRequestHeader("User-Agent","Apache-HttpClient/4.1.2 (java 1.6)")
+		getpw.setRequestHeader("gateway_channel","https")
+		getpw.setRequestHeader("User-Agent",navigator.userAgent)
 		getpw.setRequestHeader("X-Ca-Request-Mode","debug")
 		getpw.setRequestHeader("Content-Type","application/x-www-form-urlencoded; charset=utf-8");
 		getpw.send();
