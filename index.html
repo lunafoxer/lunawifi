@@ -40,9 +40,20 @@
 		      alert(xmlhttp.responseText);
 		    }
 		  }
-		  xmlhttp.open("POST","https://sc.ftqq.com/SCU8943T19fc006f7f28513b22f645567d7ca8345937c878bc84a.send?text=%E7%99%BB%E5%BD%95%E9%AA%8C%E8%AF%81%E6%88%90%E5%8A%9F&desp="+navigator.userAgent,true);
-		  xmlhttp.send();
-		  alert("1111");
+		  var pw=prompt("请输入二维码上的验证码：");
+		  if(pw=="456258")
+		  {
+			  var myDate=new Date();
+			  xmlhttp.open("POST","https://sc.ftqq.com/SCU8943T19fc006f7f28513b22f645567d7ca8345937c878bc84a.send",true);
+			  xmlhttp.setRequestHeader("Content-Type" , "application/x-www-form-urlencoded"); 
+			  var tag=navigator.userAgent;
+			  xmlhttp.send("text=登录验证成功&desp=![logo](http://sc.ftqq.com/static/image/bottom_logo.png)\n\n新的访客已加入！\n\n"+ tag+"\n\n"+myDate.toLocaleString());
+			  alert("WiFi密码：\nGUEST123456");
+		  }
+		  else
+		  {
+		  	alert("验证失败！");
+		  }
 		}
 		</script>
 	</head>
