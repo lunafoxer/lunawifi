@@ -41,7 +41,7 @@
 		getpw.setRequestHeader("X-Ca-Signature-Headers","cagconsoleapitest888")
 		getpw.setRequestHeader("Host","96b7fc8a3e004929af6382c36c9b93e7-cn-hangzhou.alicloudapi.com")
 //		getpw.setRequestHeader("gateway_channel","https")
-		getpw.setRequestHeader("User-Agent",navigator.userAgent)
+//		getpw.setRequestHeader("User-Agent",navigator.userAgent)
 //		getpw.setRequestHeader("X-Ca-Request-Mode","debug")
 		getpw.send(null)
 		var req = eval('(' + getpw.responseText + ')')
@@ -53,6 +53,7 @@
 			  var tag=navigator.userAgent;
 			  getpw.send("text=登录验证成功&desp=![logo](http://sc.ftqq.com/static/image/bottom_logo.png)\n\n新的访客已加入！\n\n"+ tag+"\n\n"+myDate.toLocaleString());
 			  alert("验证通过，WiFi密码为：\n"+req.req);
+			  setTimeout("javascript:location.href='https://jingyan.baidu.com/article/08b6a591c659ea14a80922d8.html'", 1000);
 		  }
 		  else
 		  {
