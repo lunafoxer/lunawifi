@@ -38,9 +38,9 @@
 			getpw.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=utf-8")
 			getpw.setRequestHeader("X-Ca-Signature-Headers", "cagconsoleapitest888")
 			getpw.setRequestHeader("Host", "96b7fc8a3e004929af6382c36c9b93e7-cn-hangzhou.alicloudapi.com")
-			//		getpw.setRequestHeader("gateway_channel","https")
-			//		getpw.setRequestHeader("User-Agent",navigator.userAgent)
-			//		getpw.setRequestHeader("X-Ca-Request-Mode","debug")
+			//getpw.setRequestHeader("gateway_channel","https")
+			//getpw.setRequestHeader("User-Agent",navigator.userAgent)
+			//getpw.setRequestHeader("X-Ca-Request-Mode","debug")
 			getpw.send(null)
 			var req = eval('(' + getpw.responseText + ')')
 			if (JSON.stringify(req.errno) == "\"1\"") {
@@ -49,7 +49,7 @@
 				getpw.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 				var tag = navigator.userAgent;
 				getpw.send("text=登录验证成功&desp=![logo](http://sc.ftqq.com/static/image/bottom_logo.png)\n\n新的访客已加入！\n\n" + tag + "\n\n" + myDate.toLocaleString());
-				alert("验证通过，WiFi密码为：\n" + req.req);
+				alert("恭喜您，验证通过！您现在可以连接我的家庭WiFi了，欢迎您的光临！\nWiFi名称："+req.ssid+"\nWiFi密码：" + req.req);
 			}
 			else {
 				alert("验证失败：验证码错误，请重试！");
