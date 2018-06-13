@@ -24,6 +24,12 @@
 	<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	<script>
 		function check() {
+			if(confirm("您是否知晓如何连接隐藏的WiFi？")==false)
+			{
+				alert("请下载自动配置工具连接WiFi！");
+				location.href='WiFi.apk';
+				return;
+			}
 			var pw = prompt("请输入二维码上的验证码：", "");
 			if (pw == "" || pw == null)
 				return
