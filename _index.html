@@ -23,31 +23,6 @@
 	<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
 	<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	<script>
-		function decodeUnicode(str) {  
-		    str = str.replace(/\\/g, "%");  
-		    return unescape(str);  
-		} ;
-		
-		function XMLResolve(xmlStr) {
-		    var parseXML = "";
-		    if(typeof DOMParser == "function") {
-		        parseXML = function(xmlStr) {
-		            return (new DOMParser()).parseFromString(xmlStr, "text/xml");
-		        }
-		    } else if(typeof window.ActiveXObject != 'undefined' && new      Window.ActiveXObject('Microsoft.XMLDOM')) {
-		        parseXML = function(xmlStr) {
-		            var xmlDOC = new Window.ActiveXObject("Microsoft.XMLDOM");
-		            xmlDOC.async = 'false';
-		            xmlDOC.loadXML(xmlStr);
-		            return xmlDOC;
-		        };
-		    } else {
-		        throw new Error("No XML parser found");
-		    }
-		    return parseXML(xmlStr);
-		};
-		
-		
 		function check() {
 			if(confirm("您是否知晓如何连接隐藏的WiFi？")==false)
 			{
@@ -67,19 +42,16 @@
 			}
 			try
 			{
-				var purl="http://47.104.235.159:8080/luna/services/lunahome?wsdl"
-				//var purl="http://127.0.0.1:8080/luna/services/lunahome?wsdl"
-				getpw.open("POST",purl , false) ;
-				getpw.setRequestHeader("Content-Type","json/xml; charset=utf-8");
-				getpw.setRequestHeader("SOAPAction","http://47.104.235.159:8080/luna/services/lunahome");
-				var re="<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">  <soap:Body>    <check xmlns=\"http://service\">      <password>"+pw+"</password>    </check>  </soap:Body></soap:Envelope>"
-				getpw.send(re);
-				var restext=XMLResolve(getpw.responseText);
-				//提取数据  
-				var req = restext.getElementsByTagName("checkReturn")[0].childNodes[0].nodeValue; 
-				var req = eval('(' + req + ')');
+				getpw.open("POST", "http://96b7fc8a3e004929af6382c36c9b93e7-cn-hangzhou.alicloudapi.com/checkpw/" + pw, false) ;
+				getpw.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=utf-8");
+				getpw.setRequestHeader("X-Ca-Signature-Headers", "cagconsoleapitest888");
+				getpw.setRequestHeader("Host", "96b7fc8a3e004929af6382c36c9b93e7-cn-hangzhou.alicloudapi.com");
+				//getpw.setRequestHeader("gateway_channel","https")
+				//getpw.setRequestHeader("User-Agent",navigator.userAgent)
+				//getpw.setRequestHeader("X-Ca-Request-Mode","debug")
+				getpw.send(null);
+				var req = eval('(' + getpw.responseText + ')');
 				if (JSON.stringify(req.errno) == "\"1\"") {
-
 					var myDate = new Date();
 					getpw.open("POST", "https://sc.ftqq.com/SCU8943T19fc006f7f28513b22f645567d7ca8345937c878bc84a.send", true);
 					getpw.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -93,10 +65,9 @@
 			}
 			catch(err)
 			{
-				alert(err.message);
+				alert("POST请求失败，请使用IE11及以上浏览器并授予所有权限或使用安卓手机访问此站点！");
 			}
 		}
-		
 	</script>
 </head>
 
