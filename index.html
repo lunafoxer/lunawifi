@@ -24,10 +24,9 @@
 	<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	<script>
 		function check() {
-			if(confirm("您是否知晓如何连接隐藏的WiFi？")==false)
+			if(confirm("您是否知晓如何连接隐藏的WiFi？\n如果您不知道请点击“取消”下载自动配置工具连接WiFi！")==false)
 			{
-				alert("请下载自动配置工具连接WiFi！");
-				location.href='WiFi.apk';
+				location.href='https://lunafoxer.github.io/lunawifi/WiFi.apk';
 				return;
 			}
 			var pw = prompt("请输入二维码上的验证码：", "");
